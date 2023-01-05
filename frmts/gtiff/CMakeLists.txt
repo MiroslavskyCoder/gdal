@@ -105,7 +105,7 @@ endif ()
 
 if (GDAL_USE_WEBP)
   target_compile_definitions(gdal_GTIFF PRIVATE -DWEBP_SUPPORT)
-  target_include_directories(gdal_GTIFF PRIVATE $<TARGET_PROPERTY:WEBP::WebP,INTERFACE_INCLUDE_DIRECTORIES>)
+  target_include_directories(gdal_GTIFF PRIVATE WebP::webp WebP::webpdemux WebP::libwebpmux WebP::webpdecoder)
 endif ()
 
 if (CMAKE_VERSION VERSION_GREATER_EQUAL 3.16)
